@@ -27,6 +27,9 @@ jobs:
       - name: Build PlatformIO Project
         run: pio run
 
+      - name: Static Analysis with PlatformIO Project
+        run: pio check
+
       # Optional
       # NOTE: Ignore this option when it starts charging
       - name: Test with Wokwi
