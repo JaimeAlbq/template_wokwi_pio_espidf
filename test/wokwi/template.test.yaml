@@ -4,28 +4,51 @@ author: Jaime Albuquerque
 
 steps:
   # Wait the serial transmission from the microcontroller
-  - wait-serial: '<string-to-read>'
+  # - wait-serial: '<string-to-read>'
 
-  # Press a button
-  - set-control:
-      part-id: <button-id>
-      control: pressed
-      value: 1
+  # # Press a button
+  # - set-control:
+  #     part-id: <button-id>
+  #     control: pressed
+  #     value: 1
 
-  # Release a button
-  - set-control:
-      part-id: <button-id>
-      control: pressed
-      value: 0
+  # # Release a button
+  # - set-control:
+  #     part-id: <button-id>
+  #     control: pressed
+  #     value: 0
 
-  # Set a part a specific value
-  - set-control:
-    part-id: <part-id>
-    control: <control-type>
-    value: <value-of-the-part>
+  # # Set a part a specific value
+  # - set-control:
+  #     part-id: <part-id>
+  #     control: <control-type>
+  #     value: <value-of-the-part>
   
-  # Read an expected value from a part
-  - expect-pin:
-    part-id: <part-id>
-    pin: <pin-from-the-part>
-    value: <expected-value>
+  # # Read an expected value from a part
+  # - expect-pin:
+  #     part-id: <part-id>
+  #     pin: <pin-from-the-part>
+  #     value: <expected-value>
+
+  - wait-serial: 'I (464) MAIN: INIT'
+
+  - set-control:
+      part-id: ntc1
+      control: temperature
+      value: 24
+
+  - wait-serial: 'I (464) MAIN: Temperature is 24.003C*'
+
+  - set-control:
+      part-id: ntc1
+      control: temperature
+      value: -24
+
+  - wait-serial: 'I (1464) MAIN: Temperature is -23.980C*'
+
+  - set-control:
+      part-id: ntc1
+      control: temperature
+      value: 80
+
+  - wait-serial: 'I (2464) MAIN: Temperature is 79.966C*'
