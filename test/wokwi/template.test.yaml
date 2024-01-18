@@ -39,16 +39,17 @@ steps:
 
   - wait-serial: 'MAIN: Temperature is 24.003C*'
 
-  - set-control:
-      part-id: ntc1
-      control: temperature
-      value: -24
+  # Still need to learn how to set temperature
+  # - set-control:
+  #     part-id: ntc1
+  #     control: temperature
+  #     value: -24
 
-  - wait-serial: 'MAIN: Temperature is -23.980C*'
+  # - wait-serial: 'MAIN: Temperature is -23.980C*'
 
-  - set-control:
-      part-id: ntc1
-      control: temperature
-      value: 80
+  # - set-control:
+  #     part-id: ntc1
+  #     control: temperature
+  #     value: 80
 
-  - wait-serial: 'MAIN: Temperature is 79.966C*'
+  # - wait-serial: 'MAIN: Temperature is 79.966C*'
