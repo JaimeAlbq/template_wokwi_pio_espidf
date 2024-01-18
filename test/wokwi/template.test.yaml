@@ -30,25 +30,25 @@ steps:
   #     pin: <pin-from-the-part>
   #     value: <expected-value>
 
-  - wait-serial: 'I (464) MAIN: INIT'
+  - wait-serial: 'MAIN: INIT'
 
   - set-control:
       part-id: ntc1
       control: temperature
       value: 24
 
-  - wait-serial: 'I (464) MAIN: Temperature is 24.003C*'
+  - wait-serial: 'MAIN: Temperature is 24.003C*'
 
   - set-control:
       part-id: ntc1
       control: temperature
       value: -24
 
-  - wait-serial: 'I (1464) MAIN: Temperature is -23.980C*'
+  - wait-serial: 'MAIN: Temperature is -23.980C*'
 
   - set-control:
       part-id: ntc1
       control: temperature
       value: 80
 
-  - wait-serial: 'I (2464) MAIN: Temperature is 79.966C*'
+  - wait-serial: 'MAIN: Temperature is 79.966C*'
